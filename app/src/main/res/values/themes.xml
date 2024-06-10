@@ -3,7 +3,13 @@
     <style name="Base.Theme.ClaimAssured" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
     </style>
 
-    <style name="Theme.ClaimAssured" parent="Base.Theme.ClaimAssured" />
+    <style name="Theme.ClaimAssured" parent="Base.Theme.ClaimAssured">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
 </resources>
