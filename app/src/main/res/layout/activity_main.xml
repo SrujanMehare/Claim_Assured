@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/page_header_150" />
+        app:srcCompat="@drawable/header_bg_large" />
 
     <include
         android:id="@+id/action_bar"

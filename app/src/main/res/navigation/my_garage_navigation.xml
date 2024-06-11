@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_garage_navigation"
+    app:startDestination="@id/unassignedFragment">
+    <fragment
+        android:id="@+id/unassignedFragment"
+        android:name="com.example.claimassured.my_garage.ui.UnassignedFragment"
+        android:label="fragment_unassigned"
+        tools:layout="@layout/fragment_unassigned" />
+    <fragment
+        android:id="@+id/assignedFragment2"
+        android:name="com.example.claimassured.my_garage.ui.AssignedFragment"
+        android:label="fragment_assigned"
+        tools:layout="@layout/fragment_assigned" />
+    <fragment
+        android:id="@+id/completedFragment"
+        android:name="com.example.claimassured.my_garage.ui.CompletedFragment"
+        android:label="fragment_completed"
+        tools:layout="@layout/fragment_completed" />
+</navigation>
