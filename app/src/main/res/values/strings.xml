@@ -9,5 +9,11 @@
     <string name="upload">Upload</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="burger_menu">Burger Menu</string>
+    <string name="search">Search</string>
+    <string name="sort">Sort</string>
+    <string name="background_image">Background image</string>
+    <string name="my_garage">My Garage</string>
+    <string name="tat_breached">TAT Breached</string>
 
 </resources>

@@ -1,10 +1,17 @@
 package com.example.claimassured.ext
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.annotation.DrawableRes
+import androidx.appcompat.widget.Toolbar
+import androidx.core.content.res.ResourcesCompat
+import androidx.core.view.WindowCompat
 
 // Extension function to set the view's visibility to VISIBLE
 fun View.visible() {
@@ -39,4 +46,34 @@ inline fun <reified T : Any> Context.startActivity(
         intent.putExtras(it)
     }
     startActivity(intent)
+}
+
+fun ImageView.setImageDrawableRes(@DrawableRes resId: Int) {
+    setImageDrawable(ResourcesCompat.getDrawable(resources, resId, context.theme))
+}
+
+
+fun Toolbar.setNavIcon(@DrawableRes resId: Int) {
+    navigationIcon = ResourcesCompat.getDrawable(resources, resId, context.theme)
+}
+
+@Suppress("DEPRECATION")
+// Make the status bar icons white and layout fullscreen
+fun Activity.setupFullscreenView() {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+
+//        WindowCompat.getInsetsController(window, window.decorView).let {
+//            it.systemBarsBehavior =
+//                androidx.core.view.WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+//            it.hide(androidx.core.view.WindowInsetsCompat.Type.systemBars())
+//        }
+
+        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
+
+//        WindowCompat.setDecorFitsSystemWindows(window, false)
+    } else {
+        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
+    }
 }

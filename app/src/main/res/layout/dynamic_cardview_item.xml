@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="cardDetails"
+            type="com.example.claimassured.my_garage.model.MyGarageModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginBottom="20dp"
+            android:elevation="@dimen/dimen_1dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/white"
+            app:strokeWidth="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/locationRow"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:constraint_referenced_ids="location_icon, location_txt"
+                    app:isLocationRowVisible="@{cardDetails.isLocationRowVisible}" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/workerRow"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:visibility="visible"
+                    app:constraint_referenced_ids="worker_icon, worker_txt"
+                    app:isWorkerRowVisible="@{cardDetails.isWorkerRowVisible}" />
+
+                <ImageView
+                    android:id="@+id/location_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintEnd_toEndOf="@+id/owner_icon"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/owner_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/owner_icon"
+                    app:srcCompat="@drawable/location" />
+
+                <TextView
+                    android:id="@+id/location_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
+                    android:includeFontPadding="false"
+                    android:singleLine="true"
+                    android:text="@{cardDetails.locationTxt}"
+                    android:textColor="@color/bold_text_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/location_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/owner_icon"
+                    app:layout_constraintTop_toTopOf="@+id/location_icon"
+                    tools:text="Volkswagen Service, Sector 24, Gurugram" />
+
+                <TextView
+                    android:id="@+id/date_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="20dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
+                    android:includeFontPadding="false"
+                    android:singleLine="true"
+                    android:text="@{cardDetails.claimIntimatedOnTxt}"
+                    android:textColor="#2F3741"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toTopOf="@+id/btnSlider"
+                    app:layout_constraintEnd_toEndOf="@+id/claim_intimated_on_txt"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/claim_intimated_on_txt"
+                    app:layout_constraintTop_toBottomOf="@+id/claim_intimated_on_txt"
+                    tools:text="12/04/2024" />
+
+                <TextView
+                    android:id="@+id/owner_name_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
+                    android:includeFontPadding="false"
+                    android:singleLine="true"
+                    android:text="@{cardDetails.ownerNameTxt}"
+                    android:textColor="@color/bold_text_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/owner_icon"
+                    app:layout_constraintEnd_toEndOf="@+id/location_txt"
+                    app:layout_constraintStart_toEndOf="@+id/owner_icon"
+                    app:layout_constraintTop_toTopOf="@+id/owner_icon"
+                    tools:text="Sarthak Hans" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:background="@color/app_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+                <TextView
+                    android:id="@+id/vehicle_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
+                    android:includeFontPadding="false"
+                    android:singleLine="true"
+                    android:text="@{cardDetails.vehicleNumberTxt}"
+                    android:textColor="@color/sub_heading_color"
+                    app:layout_constraintEnd_toStartOf="@+id/txt_divider"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintHorizontal_weight="0.85"
+                    app:layout_constraintStart_toStartOf="@+id/policy_number_txt"
+                    app:layout_constraintTop_toBottomOf="@+id/policy_number_txt"
+                    tools:text="DL 01 AB 1234" />
+
+                <TextView
+                    android:id="@+id/txt_divider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:includeFontPadding="false"
+                    android:text="|"
+                    android:textColor="#402F3741"
+                    app:layout_constraintBottom_toBottomOf="@+id/vehicle_number"
+                    app:layout_constraintEnd_toStartOf="@+id/vehicle_name"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/vehicle_number"
+                    app:layout_constraintTop_toTopOf="@+id/vehicle_number" />
+
+                <TextView
+                    android:id="@+id/vehicle_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="4dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
+                    android:includeFontPadding="false"
+                    android:singleLine="true"
+                    android:text="@{cardDetails.vehicleNameTxt}"
+                    android:textColor="@color/sub_heading_color"
+                    app:layout_constraintEnd_toStartOf="@+id/txt_divider2"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_weight="0.8"
+                    app:layout_constraintStart_toEndOf="@+id/txt_divider"
+                    app:layout_constraintTop_toBottomOf="@+id/policy_number_txt"
+                    tools:text="Maruti Suzuki" />
+
+                <TextView
+                    android:id="@+id/txt_divider2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:includeFontPadding="false"
+                    android:text="|"
+                    android:textColor="#402F3741"
+                    app:layout_constraintBottom_toBottomOf="@+id/vehicle_number"
+                    app:layout_constraintEnd_toStartOf="@+id/vehicle_model"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/vehicle_name"
+                    app:layout_constraintTop_toTopOf="@+id/vehicle_number" />
+
+                <TextView
+                    android:id="@+id/vehicle_model"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="4dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
+                    android:includeFontPadding="false"
+                    android:singleLine="true"
+                    android:text="@{cardDetails.vehicleModelTxt}"
+                    android:textColor="@color/sub_heading_color"
+                    app:layout_constraintEnd_toEndOf="@+id/policy_number_txt"
+                    app:layout_constraintHorizontal_weight="0.6"
+                    app:layout_constraintStart_toEndOf="@+id/txt_divider2"
+                    app:layout_constraintTop_toBottomOf="@+id/policy_number_txt"
+                    tools:text="Frank GLI" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="96dp" />
+
+                <TextView
+                    android:id="@+id/policy_number_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:includeFontPadding="false"
+                    android:text="@{cardDetails.policyNumberTxt}"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/bold_text_color"
+                    app:layout_constraintEnd_toStartOf="@+id/more_btn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="MOT14808155" />
+
+                <ImageView
+                    android:id="@+id/more_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/submenu" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="327dp" />
+
+                <ImageView
+                    android:id="@+id/owner_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view2"
+                    app:srcCompat="@drawable/insured_person" />
+
+                <ImageView
+                    android:id="@+id/worker_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintEnd_toEndOf="@+id/owner_icon"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/location_icon"
+                    app:srcCompat="@drawable/icon_worker" />
+
+                <TextView
+                    android:id="@+id/worker_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
+                    android:includeFontPadding="false"
+                    android:singleLine="true"
+                    android:text="@{cardDetails.assignedToTxt}"
+                    android:textColor="@color/bold_text_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/worker_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/owner_icon"
+                    app:layout_constraintTop_toTopOf="@+id/worker_icon"
+                    tools:text="Assigned to: Ramesh Kumar" />
+
+                <TextView
+                    android:id="@+id/tat_breached_status_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/poppins"
+                    android:includeFontPadding="false"
+                    android:text="@string/tat_breached"
+                    android:textColor="@color/small_text_color"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/claim_intimated_on_txt"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="@+id/location_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/worker_icon" />
+
+                <TextView
+                    android:id="@+id/claim_intimated_on_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:includeFontPadding="false"
+                    android:text="Claim Intimated on"
+                    android:textColor="@color/small_text_color"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tat_breached_status_txt"
+                    app:layout_constraintEnd_toStartOf="@+id/ageing_txt"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tat_breached_status_txt"
+                    app:layout_constraintTop_toTopOf="@+id/tat_breached_status_txt" />
+
+                <TextView
+                    android:id="@+id/ageing_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:includeFontPadding="false"
+                    android:text="Ageing"
+                    android:textColor="@color/small_text_color"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/claim_intimated_on_txt"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toEndOf="@+id/claim_intimated_on_txt"
+                    app:layout_constraintTop_toTopOf="@+id/claim_intimated_on_txt" />
+
+                <TextView
+                    android:id="@+id/bool_tat_status_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins_medium"
+                    android:includeFontPadding="false"
+                    android:singleLine="true"
+                    android:text="@{cardDetails.tatBreachedTxt}"
+                    android:textColor="#FF6262"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tat_breached_status_txt"
+                    app:layout_constraintStart_toStartOf="@+id/tat_breached_status_txt"
+                    app:layout_constraintTop_toBottomOf="@+id/tat_breached_status_txt"
+                    tools:text="Yes" />
+
+                <TextView
+                    android:id="@+id/days_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
+                    android:includeFontPadding="false"
+                    android:singleLine="true"
+                    android:text="@{cardDetails.ageingTxt}"
+                    android:textColor="#2F3741"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@+id/location_txt"
+                    app:layout_constraintStart_toStartOf="@+id/ageing_txt"
+                    app:layout_constraintTop_toBottomOf="@+id/claim_intimated_on_txt"
+                    tools:text="35 days" />
+
+                <com.example.claimassured.swipe_button.SwipeButton
+                    android:id="@+id/btnSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_48dp"
+                    android:layout_marginStart="@dimen/dimen_20dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="@dimen/dimen_20dp"
+                    android:layout_marginBottom="20dp"
+                    app:button_image_disabled="@drawable/ic_arrow_right"
+                    app:button_image_enabled="@drawable/ic_arrow_right"
+                    app:button_image_height="48dp"
+                    app:button_image_width="48dp"
+                    app:button_trail_enabled="true"
+                    app:canSlideToAssign="@{cardDetails.canSlideToAssign}"
+                    app:has_activate_state="true"
+                    app:initial_state="disabled"
+                    app:inner_text="Swipe to mark this task as completed"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/date_txt" />
+
+                <View
+                    android:id="@+id/card_indicator"
+                    android:layout_width="5dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="14dp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:priorityColor="@{cardDetails.priorityColor}"
+                    tools:background="@drawable/card_indicator" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

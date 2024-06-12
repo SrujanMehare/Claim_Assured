@@ -6,6 +6,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.claimassured.R
 import com.example.claimassured.databinding.ActivityMyGarageBinding
+import com.example.claimassured.ext.setupFullscreenView
 
 class MyGarageActivity : AppCompatActivity() {
 
@@ -16,33 +17,14 @@ class MyGarageActivity : AppCompatActivity() {
         binding = ActivityMyGarageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        val navHostFragment = supportFragmentManager
-//            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-//        val navController = navHostFragment.navController
-////
-//        NavigationUI.setupWithNavController(binding.bottomNavigationView, navController)
-////
-//        binding.bottomNavigationView.setupWithNavController(
-//            findNavController(R.id.nav_host_fragment)
-//        )
+        setupFullscreenView()
+        setupBottomNavigation()
+    }
 
-        // Find the NavHostFragment and NavController
-//        val navHostFragment = supportFragmentManager
-//            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-//        val navController = navHostFragment.navController
-//
-//        // Setup BottomNavigationView with NavController
-//        binding.bottomNavigationView.setupWithNavController(navController)
-
-//        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-//        val navController = navHostFragment.navController
-//        val navView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
-//        navView.setupWithNavController(navController)
-
+    private fun setupBottomNavigation() {
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
-
         binding.bottomNavigation.setupWithNavController(navController)
     }
 }

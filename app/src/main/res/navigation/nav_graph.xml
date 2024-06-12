@@ -2,18 +2,18 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/firstFragment">
+    app:startDestination="@id/unassignedFragment">
 
     <fragment
-        android:id="@+id/firstFragment"
-        android:name="com.example.claimassured.my_garage.ui.FirstFragment"
-        android:label="First Fragment" />
+        android:id="@+id/unassignedFragment"
+        android:name="com.example.claimassured.my_garage.ui.UnassignedFragment"
+        android:label="Unassigned" />
     <fragment
-        android:id="@+id/secondFragment"
-        android:name="com.example.claimassured.my_garage.ui.SecondFragment"
-        android:label="Second Fragment" />
+        android:id="@+id/assignedFragment"
+        android:name="com.example.claimassured.my_garage.ui.AssignedFragment"
+        android:label="Assigned" />
     <fragment
-        android:id="@+id/thirdFragment"
-        android:name="com.example.claimassured.my_garage.ui.ThirdFragment"
-        android:label="Third Fragment" />
+        android:id="@+id/completedZFragment"
+        android:name="com.example.claimassured.my_garage.ui.CompletedFragment"
+        android:label="Completed" />
 </navigation>

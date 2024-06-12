@@ -14,11 +14,12 @@
         tools:targetApi="31">
         <activity
             android:name=".my_garage.ui.MyGarageActivity"
+            android:theme="@style/windowDrawsSystemBarBackgrounds"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/curvedBottomNavigationView">
+            android:theme="@style/windowDrawsSystemBarBackgrounds">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

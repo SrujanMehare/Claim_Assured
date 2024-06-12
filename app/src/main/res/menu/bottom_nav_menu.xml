@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/firstFragment"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="First" />
+        android:id="@+id/unassignedFragment"
+        android:icon="@drawable/icon_unassigned"
+        android:title="@string/unassigned" />
     <item
-        android:id="@+id/secondFragment"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="Second" />
+        android:id="@+id/assignedFragment"
+        android:icon="@drawable/icon_assigned"
+        android:title="@string/assigned" />
     <item
-        android:id="@+id/thirdFragment"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="Third" />
+        android:id="@+id/completedZFragment"
+        android:icon="@drawable/icon_completed"
+        android:title="@string/completed" />
 </menu>
