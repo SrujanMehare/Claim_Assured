@@ -6,14 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.claimassured.R
 import com.example.claimassured.databinding.FragmentUnassignedBinding
-import com.example.claimassured.ext.gone
-import com.example.claimassured.ext.setImageDrawableRes
-import com.example.claimassured.ext.visible
+import com.example.claimassured.ext.setupToolbarForGarage
 import com.example.claimassured.my_garage.model.MyGarageModel
 import com.example.claimassured.my_garage.ui.adapter.GarageAdapter
-import com.example.claimassured.my_garage.ui.test.TestClass.Companion.generateRandomGarageModels
+import com.example.claimassured.my_garage.ui.test.TestClass.Companion.generateUnassignedTaskList
 
 class UnassignedFragment : Fragment() {
 
@@ -31,6 +28,10 @@ class UnassignedFragment : Fragment() {
 
     private fun setupViews() {
         setupToolbar()
+        setupAdapter()
+    }
+
+    private fun setupAdapter() {
 
         val garageList = createDummyMyGarageList()
 
@@ -44,14 +45,11 @@ class UnassignedFragment : Fragment() {
     }
 
     private fun createDummyMyGarageList(): List<MyGarageModel> {
-        return generateRandomGarageModels(10)
+        return generateUnassignedTaskList(10)
     }
 
     private fun setupToolbar() {
-        binding.actionBar.navBtn.setImageDrawableRes(R.drawable.icon_back)
-        binding.actionBar.headingTxt.text = getString(R.string.my_garage)
-        binding.actionBar.btnSort.gone()
-        binding.actionBar.serviceCenterName.visible()
+        binding.actionBar.root.setupToolbarForGarage()
     }
 
 }

@@ -6,12 +6,14 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.DrawableRes
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.res.ResourcesCompat
-import androidx.core.view.WindowCompat
+import com.example.claimassured.R
 
 // Extension function to set the view's visibility to VISIBLE
 fun View.visible() {
@@ -76,4 +78,17 @@ fun Activity.setupFullscreenView() {
         window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
     }
+}
+
+fun ViewGroup.setupToolbarForGarage(
+) {
+    val navBtn = findViewById<ImageView>(R.id.nav_btn)
+    val headingTxt = findViewById<TextView>(R.id.heading_txt)
+    val btnSort = findViewById<View>(R.id.btn_sort)
+    val serviceCenterName = findViewById<View>(R.id.service_center_name)
+
+    navBtn?.setImageDrawableRes(R.drawable.icon_back)
+    headingTxt?.text = context.getString(R.string.my_garage)
+    btnSort?.gone()
+    serviceCenterName?.visible()
 }

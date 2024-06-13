@@ -15,5 +15,13 @@
     <string name="background_image">Background image</string>
     <string name="my_garage">My Garage</string>
     <string name="tat_breached">TAT Breached</string>
+    <string name="ageing">Ageing</string>
+    <string name="claim_intimated_on">Claim Intimated on</string>
+    <string name="worker">Worker</string>
+    <string name="owner">Owner</string>
+    <string name="more">More</string>
+    <string name="divider_text">|</string>
+    <string name="location">Location</string>
+    <string name="slide_to_assign_yourself">Slide to Assign Yourself</string>
 
 </resources>

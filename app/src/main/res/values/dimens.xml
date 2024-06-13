@@ -39,4 +39,6 @@
     <dimen name="search_button_size">24dp</dimen>
     <dimen name="dimen_11dp">11dp</dimen>
     <dimen name="dimen_14dp">14dp</dimen>
+    <dimen name="dimen_13sp">13sp</dimen>
+    <dimen name="dimen_12dp">12dp</dimen>
 </resources>

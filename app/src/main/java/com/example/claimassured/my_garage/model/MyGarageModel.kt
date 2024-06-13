@@ -16,6 +16,7 @@ data class MyGarageModel(
     val priorityColor: PriorityColor,
     val isWorkerRowVisible: Boolean,
     val isLocationRowVisible: Boolean,
-    val canSlideToAssign: Boolean
+    val canSlideToAssign: Boolean,
+    var isBtnSliderVisible: Boolean
 )
 

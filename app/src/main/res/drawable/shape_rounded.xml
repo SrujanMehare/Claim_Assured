@@ -3,6 +3,9 @@
         <shape android:shape="rectangle">
             <corners android:radius="@dimen/dimen_24dp" />
             <solid android:color="@color/colorAccent" />
+            <stroke
+                android:width="6dp"
+                android:color="@color/slider_bg" />
         </shape>
     </item>
 </selector>

@@ -165,13 +165,11 @@ class SwipeButton : RelativeLayout {
             val backgroundDrawable =
                 typedArray.getDrawable(R.styleable.SwipeButton_inner_text_background)
             if (backgroundDrawable != null) {
-                (background as RelativeLayout).setBackground(backgroundDrawable)
+                (background as RelativeLayout).background = backgroundDrawable
             } else {
-                (background as RelativeLayout).setBackground(
-                    ContextCompat.getDrawable(
-                        context,
-                        R.drawable.swipe_shape_button
-                    )
+                (background as RelativeLayout).background = ContextCompat.getDrawable(
+                    context,
+                    R.drawable.swipe_shape_button
                 )
             }
             if (trailEnabled) {
@@ -216,6 +214,8 @@ class SwipeButton : RelativeLayout {
             val innerTextBottomPadding = typedArray.getDimension(
                 R.styleable.SwipeButton_inner_text_bottom_padding, 0f
             )
+//            val drawable = ResourcesCompat.getDrawable(context.resources,R.drawable.slider_btn_arrow,null)
+
             val initialState = typedArray.getInt(R.styleable.SwipeButton_initial_state, DISABLED)
             if (initialState == ENABLED) {
                 val layoutParamsButton = LayoutParams(
@@ -253,13 +253,13 @@ class SwipeButton : RelativeLayout {
                     ContextCompat.getDrawable(context, R.drawable.shape_rounded)
             }
             buttonLeftPadding =
-                typedArray.getDimension(R.styleable.SwipeButton_button_left_padding, 0f)
+                typedArray.getDimension(R.styleable.SwipeButton_button_left_padding, 40f)
             buttonTopPadding =
-                typedArray.getDimension(R.styleable.SwipeButton_button_top_padding, 0f)
+                typedArray.getDimension(R.styleable.SwipeButton_button_top_padding, 40f)
             buttonRightPadding =
-                typedArray.getDimension(R.styleable.SwipeButton_button_right_padding, 0f)
+                typedArray.getDimension(R.styleable.SwipeButton_button_right_padding, 40f)
             buttonBottomPadding =
-                typedArray.getDimension(R.styleable.SwipeButton_button_bottom_padding, 0f)
+                typedArray.getDimension(R.styleable.SwipeButton_button_bottom_padding, 40f)
             swipeButtonInner!!.setPadding(
                 buttonLeftPadding.toInt(),
                 buttonTopPadding.toInt(),
@@ -274,7 +274,7 @@ class SwipeButton : RelativeLayout {
     }
 
     private val buttonTouchListener: OnTouchListener
-        private get() = object : OnTouchListener {
+        get() = object : OnTouchListener {
             override fun onTouch(v: View, event: MotionEvent): Boolean {
                 when (event.action) {
                     MotionEvent.ACTION_DOWN -> return true /*swipeButtonInner?.let {
@@ -312,7 +312,7 @@ class SwipeButton : RelativeLayout {
                         if (isActive) {
                             collapseButton()
                         } else {
-                            initialButtonWidth = swipeButtonInner!!.getWidth()
+                            initialButtonWidth = swipeButtonInner!!.width
                             if (swipeButtonInner!!.x + swipeButtonInner!!.width > width * 0.9) {
                                 if (hasActivationState) {
                                     expandButton()
@@ -388,8 +388,7 @@ class SwipeButton : RelativeLayout {
 
     @SuppressLint("ObjectAnimatorBinding")
     private fun collapseButton() {
-        val finalWidth: Int
-        finalWidth = if (collapsedWidth == ViewGroup.LayoutParams.WRAP_CONTENT) {
+        val finalWidth: Int = if (collapsedWidth == ViewGroup.LayoutParams.WRAP_CONTENT) {
             swipeButtonInner!!.height
         } else {
             collapsedWidth
