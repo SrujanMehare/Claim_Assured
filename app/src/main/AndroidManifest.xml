@@ -17,7 +17,7 @@
             android:theme="@style/windowDrawsSystemBarBackgrounds"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".my_tasks.MyTaskActivity"
             android:exported="true"
             android:theme="@style/windowDrawsSystemBarBackgrounds">
             <intent-filter>

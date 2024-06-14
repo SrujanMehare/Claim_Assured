@@ -1,4 +1,4 @@
-package com.example.claimassured.my_garage.ui
+package com.example.claimassured.my_tasks
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,27 +6,33 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.claimassured.databinding.FragmentUnassignedBinding
+import com.example.claimassured.databinding.FragmentAssignedTaskBinding
 import com.example.claimassured.my_garage.model.MyGarageModel
 import com.example.claimassured.my_garage.ui.adapter.GarageAdapter
-import com.example.claimassured.my_garage.ui.test.TestClass.Companion.generateUnassignedTaskList
+import com.example.claimassured.my_garage.ui.test.TestClass.Companion.generateAssignedTaskList
 
-class UnassignedFragment : Fragment() {
+class AssignedTaskFragment : Fragment() {
 
-    private lateinit var binding: FragmentUnassignedBinding
+    private lateinit var binding: FragmentAssignedTaskBinding
     private lateinit var myGarageAdapter: GarageAdapter
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-       binding = FragmentUnassignedBinding.inflate(layoutInflater)
-        setupViews()
+        binding = FragmentAssignedTaskBinding.inflate(layoutInflater)
+        setupUI()
         return binding.root
     }
 
-    private fun setupViews() {
+    private fun setupUI() {
         setupAdapter()
+        setupClickListeners()
+    }
+
+    private fun setupClickListeners() {
+
     }
 
     private fun setupAdapter() {
@@ -43,7 +49,6 @@ class UnassignedFragment : Fragment() {
     }
 
     private fun createDummyMyGarageList(): List<MyGarageModel> {
-        return generateUnassignedTaskList(10)
+        return generateAssignedTaskList(10)
     }
-
 }

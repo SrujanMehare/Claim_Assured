@@ -6,9 +6,9 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import com.example.claimassured.R
 import com.example.claimassured.ext.gone
-import com.example.claimassured.swipe_button.OnActiveListener
-import com.example.claimassured.swipe_button.SwipeButton
 import com.example.claimassured.utils.PriorityColor
+import com.example.claimassured.utils.swipe_button.OnActiveListener
+import com.example.claimassured.utils.swipe_button.SwipeButton
 
 @BindingAdapter("isWorkerRowVisible")
 fun isWorkerRowVisible(view: View, isVisible: Boolean) {

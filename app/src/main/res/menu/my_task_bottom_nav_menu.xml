@@ -4,13 +4,13 @@
 
 
     <item
-        android:id="@+id/assigned"
+        android:id="@+id/assignedTaskFragment"
         android:icon="@drawable/icon_unassigned"
         android:title="@string/assigned"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/inProgress"
+        android:id="@+id/inProgressTaskFragment"
         android:icon="@drawable/icon_assigned"
         android:title="@string/in_progress"
         app:showAsAction="ifRoom" />
@@ -20,12 +20,12 @@
         android:title="" />
 
     <item
-        android:id="@+id/upload"
+        android:id="@+id/uploadTaskFragment"
         android:icon="@drawable/icon_upload"
         android:title="@string/upload"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/completed"
+        android:id="@+id/completedTaskFragment"
         android:icon="@drawable/icon_completed"
         android:title="@string/completed"
         app:showAsAction="ifRoom" />

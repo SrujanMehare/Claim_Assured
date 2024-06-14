@@ -346,7 +346,7 @@
                 app:layout_constraintStart_toStartOf="@+id/ageing_txt"
                 app:layout_constraintTop_toBottomOf="@+id/claim_intimated_on_txt" />
 
-            <com.example.claimassured.swipe_button.SwipeButton
+            <com.example.claimassured.utils.swipe_button.SwipeButton
                 android:id="@+id/btnSlider"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_48dp"

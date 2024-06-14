@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_4dp"
+        android:fontFamily="@font/poppins"
+        android:includeFontPadding="false"
+        android:text="Workshop Employee"
+        android:textColor="@color/sub_heading_color"
+        app:layout_constraintEnd_toEndOf="@+id/usernameTxt"
+        app:layout_constraintStart_toStartOf="@+id/usernameTxt"
+        app:layout_constraintTop_toBottomOf="@+id/usernameTxt" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/logoutBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="logoutIcon,logoutTxt" />
+
+    <TextView
+        android:id="@+id/tvLastLoginTimeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:includeFontPadding="false"
+        android:text="Last Login Time :"
+        android:textColor="@color/small_text_color"
+        app:layout_constraintBottom_toTopOf="@+id/tvLastLoginTime"
+        app:layout_constraintStart_toStartOf="@+id/logoutIcon"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tvLastLoginTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/poppins_medium"
+        android:includeFontPadding="false"
+        android:text="Feb 9, 2021 02:01 PM"
+        android:textColor="@color/small_text_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvLastLoginTimeLabel" />
+
+    <ImageView
+        android:id="@+id/profileImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_93dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/user_pic_logo" />
+
+    <TextView
+        android:id="@+id/usernameTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="@dimen/dimen_24dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:includeFontPadding="false"
+        android:text="Username"
+        android:textAlignment="center"
+        android:textColor="@color/sub_heading_color"
+        android:textSize="@dimen/dimen_24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileImg" />
+
+    <ImageView
+        android:id="@+id/workshopEmployeeTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/employeePhoneTxt"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/icon_call" />
+
+    <TextView
+        android:id="@+id/employeePhoneTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins"
+        android:includeFontPadding="false"
+        android:text="+91-9008007001"
+        android:textColor="@color/sub_heading_color"
+        app:layout_constraintBottom_toBottomOf="@+id/workshopEmployeeTxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/workshopEmployeeTxt"
+        app:layout_constraintTop_toTopOf="@+id/workshopEmployeeTxt" />
+
+    <TextView
+        android:id="@+id/workshopLocationTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_5dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins"
+        android:includeFontPadding="false"
+        android:text="Skydac Kia Workshop, Jankipuram,\nLucknow"
+        android:textColor="@color/sub_heading_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        android:layout_marginEnd="@dimen/dimen_5dp"
+        app:layout_constraintEnd_toStartOf="@+id/workshopLocationTxt"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/workshopEmployeeTxt"
+        app:layout_constraintTop_toBottomOf="@+id/workshopEmployeeTxt"
+        app:srcCompat="@drawable/ic_location_drawer" />
+
+    <View
+        android:id="@+id/myGarageContainer"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dimen_150dp"
+        android:layout_marginTop="34dp"
+        android:background="@color/drawer_pink_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workshopLocationTxt" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/garage_image"
+        app:layout_constraintBottom_toBottomOf="@+id/myGarageContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/profile_my_garage_img" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_24dp"
+        android:layout_marginTop="@dimen/dimen_24dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:includeFontPadding="false"
+        android:text="@string/my_garage"
+        android:textSize="@dimen/dimen_16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/myGarageContainer" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="@+id/textView5"
+        app:srcCompat="@drawable/arrow_red" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_6dp"
+        android:includeFontPadding="false"
+        android:text="Lorem Ipsum is simply\ndummy text"
+        android:textColor="@color/small_text_color"
+        android:textSize="@dimen/dimen_15sp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView5"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <ImageView
+        android:id="@+id/drawerCloseBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_32dp"
+        android:layout_marginEnd="@dimen/dimen_32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_close_drawer" />
+
+    <TextView
+        android:id="@+id/logoutTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:fontFamily="@font/poppins"
+        android:includeFontPadding="false"
+        android:text="@string/logout"
+        android:textColor="@color/small_text_color"
+        app:layout_constraintBottom_toBottomOf="@+id/logoutIcon"
+        app:layout_constraintStart_toEndOf="@+id/logoutIcon"
+        app:layout_constraintTop_toTopOf="@+id/logoutIcon" />
+
+    <ImageView
+        android:id="@+id/logoutIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myGarageContainer"
+        app:srcCompat="@drawable/ic_logout" />
+</androidx.constraintlayout.widget.ConstraintLayout>

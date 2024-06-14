@@ -11,4 +11,5 @@
     <color name="divider_color">#402F3741</color>
     <color name="dark_grey">#2F3741</color>
     <color name="slider_bg">#E7EFF9</color>
+    <color name="drawer_pink_color">#ffebeb</color>
 </resources>

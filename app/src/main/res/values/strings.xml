@@ -23,5 +23,7 @@
     <string name="divider_text">|</string>
     <string name="location">Location</string>
     <string name="slide_to_assign_yourself">Slide to Assign Yourself</string>
+    <string name="garage_image">Garage Image</string>
+    <string name="logout">Logout</string>
 
 </resources>

@@ -1,4 +1,4 @@
-package com.example.claimassured.swipe_button
+package com.example.claimassured.utils.swipe_button
 
 import android.view.MotionEvent
 import android.view.View

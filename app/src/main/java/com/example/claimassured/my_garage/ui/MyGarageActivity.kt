@@ -2,11 +2,11 @@ package com.example.claimassured.my_garage.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
 import com.example.claimassured.R
 import com.example.claimassured.databinding.ActivityMyGarageBinding
+import com.example.claimassured.ext.setupBottomNavigation
 import com.example.claimassured.ext.setupFullscreenView
+import com.example.claimassured.ext.setupToolbarForMyGarage
 
 class MyGarageActivity : AppCompatActivity() {
 
@@ -18,13 +18,19 @@ class MyGarageActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupFullscreenView()
-        setupBottomNavigation()
+        setupActionBar()
+        setupBottomNavigation(binding.bottomNavigation, R.id.nav_host_fragment_garage)
+        setupClickListeners()
     }
 
-    private fun setupBottomNavigation() {
-        val navHostFragment = supportFragmentManager
-            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        val navController = navHostFragment.navController
-        binding.bottomNavigation.setupWithNavController(navController)
+    private fun setupClickListeners() {
+        binding.actionBar.navBtn.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
     }
+
+    private fun setupActionBar() {
+        binding.actionBar.root.setupToolbarForMyGarage()
+    }
+
 }

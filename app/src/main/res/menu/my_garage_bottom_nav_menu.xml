@@ -9,7 +9,7 @@
         android:icon="@drawable/icon_assigned"
         android:title="@string/assigned" />
     <item
-        android:id="@+id/completedZFragment"
+        android:id="@+id/completedFragment"
         android:icon="@drawable/icon_completed"
         android:title="@string/completed" />
 </menu>

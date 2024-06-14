@@ -11,9 +11,16 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.DrawableRes
+import androidx.annotation.LayoutRes
 import androidx.appcompat.widget.Toolbar
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.res.ResourcesCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.example.claimassured.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 // Extension function to set the view's visibility to VISIBLE
 fun View.visible() {
@@ -50,6 +57,16 @@ inline fun <reified T : Any> Context.startActivity(
     startActivity(intent)
 }
 
+inline fun <reified T : Any> Fragment.startActivity(
+    extras: Bundle? = null
+) {
+    val intent = Intent(requireContext(), T::class.java)
+    extras?.let {
+        intent.putExtras(it)
+    }
+    startActivity(intent)
+}
+
 fun ImageView.setImageDrawableRes(@DrawableRes resId: Int) {
     setImageDrawable(ResourcesCompat.getDrawable(resources, resId, context.theme))
 }
@@ -80,7 +97,7 @@ fun Activity.setupFullscreenView() {
     }
 }
 
-fun ViewGroup.setupToolbarForGarage(
+fun ViewGroup.setupToolbarForMyGarage(
 ) {
     val navBtn = findViewById<ImageView>(R.id.nav_btn)
     val headingTxt = findViewById<TextView>(R.id.heading_txt)
@@ -91,4 +108,37 @@ fun ViewGroup.setupToolbarForGarage(
     headingTxt?.text = context.getString(R.string.my_garage)
     btnSort?.gone()
     serviceCenterName?.visible()
+}
+
+fun ViewGroup.setupToolbarForMyTask(
+) {
+    val navBtn = findViewById<ImageView>(R.id.nav_btn)
+    val headingTxt = findViewById<TextView>(R.id.heading_txt)
+    val btnSort = findViewById<View>(R.id.btn_sort)
+    val serviceCenterName = findViewById<View>(R.id.service_center_name)
+
+    navBtn?.setImageDrawableRes(R.drawable.icon_burger_menu)
+    headingTxt?.text = context.getString(R.string.my_tasks)
+    btnSort?.visible()
+    serviceCenterName?.invisible()
+}
+
+fun FragmentActivity.setupBottomNavigation(bottomNavigationView: BottomNavigationView, navHostFragmentId: Int) {
+    val navHostFragment =
+        supportFragmentManager.findFragmentById(navHostFragmentId) as NavHostFragment
+    val navController = navHostFragment.navController
+    bottomNavigationView.setupWithNavController(navController)
+}
+
+fun Activity.setupDrawer(
+    @LayoutRes customNavigationLayoutId: Int,
+    navigationContainerId: Int
+) {
+    val customNavigationContainer = findViewById<ConstraintLayout>(navigationContainerId)
+    val customNavigationView = layoutInflater.inflate(
+        customNavigationLayoutId,
+        customNavigationContainer,
+        false
+    )
+    customNavigationContainer.addView(customNavigationView)
 }

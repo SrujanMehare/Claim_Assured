@@ -7,7 +7,7 @@ import com.example.claimassured.databinding.DynamicCardviewItemBinding
 import com.example.claimassured.ext.gone
 import com.example.claimassured.ext.visible
 import com.example.claimassured.my_garage.model.MyGarageModel
-import com.example.claimassured.swipe_button.OnActiveListener
+import com.example.claimassured.utils.swipe_button.OnActiveListener
 
 class GarageAdapter(private val garageList: List<MyGarageModel>) :
     RecyclerView.Adapter<GarageAdapter.GarageViewHolder>() {

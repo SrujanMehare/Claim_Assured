@@ -10,7 +10,7 @@
         android:label="fragment_unassigned"
         tools:layout="@layout/fragment_unassigned" />
     <fragment
-        android:id="@+id/assignedFragment2"
+        android:id="@+id/assignedFragment"
         android:name="com.example.claimassured.my_garage.ui.AssignedFragment"
         android:label="fragment_assigned"
         tools:layout="@layout/fragment_assigned" />

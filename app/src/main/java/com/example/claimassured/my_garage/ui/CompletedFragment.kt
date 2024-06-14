@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.claimassured.databinding.FragmentCompletedBinding
-import com.example.claimassured.ext.setupToolbarForGarage
 import com.example.claimassured.my_garage.model.MyGarageModel
 import com.example.claimassured.my_garage.ui.adapter.GarageAdapter
 import com.example.claimassured.my_garage.ui.test.TestClass.Companion.generateCompletedTaskList
@@ -27,7 +26,6 @@ class CompletedFragment : Fragment() {
     }
 
     private fun setupViews() {
-        setupToolbar()
         setupAdapter()
     }
 
@@ -46,9 +44,5 @@ class CompletedFragment : Fragment() {
 
     private fun createDummyMyGarageList(): List<MyGarageModel> {
         return generateCompletedTaskList(10)
-    }
-
-    private fun setupToolbar() {
-        binding.actionBar.root.setupToolbarForGarage()
     }
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_task_navigation"
+    app:startDestination="@id/assignedTaskFragment">
+
+    <fragment
+        android:id="@+id/assignedTaskFragment"
+        android:name="com.example.claimassured.my_tasks.AssignedTaskFragment"
+        android:label="Assigned" />
+    <fragment
+        android:id="@+id/inProgressTaskFragment"
+        android:name="com.example.claimassured.my_tasks.InProgressTaskFragment"
+        android:label="In Progress" />
+    <fragment
+        android:id="@+id/uploadTaskFragment"
+        android:name="com.example.claimassured.my_tasks.UploadTaskFragment"
+        android:label="Upload"
+        tools:layout="@layout/fragment_upload_task" />
+    <fragment
+        android:id="@+id/completedTaskFragment"
+        android:name="com.example.claimassured.my_tasks.CompletedTaskFragment"
+        android:label="Completed" />
+</navigation>
